@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "sidebar-collapser",
+  "version": "1.0",
+  "description": "Collapses the reddit sidebar.",
+  
+  "browser_action": {
+	"browser_style": true,
+	"default_icon": {
+		"48": "icons/redtsnoo.png"
+	},
+	"default_title": "sidebar-collapser"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["javascript/sidebar-collapser.js"]
+    }
+  ],
+  
+  "background": {
+	"scripts": ["javascript/default-popup.js"]
+  },
+  
+  "permissions": [
+	"storage"
+  ]
+}
